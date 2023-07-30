@@ -1,38 +1,16 @@
-public class SalesTrainee implements Visitable{
-
-    private int sickDays;
-    private int failedTests;
-    private double salary;
+public class SalesTrainee implements Visitable {
+    private SalesTraineeData data; // Menggunakan objek SalesTraineeData
 
     public SalesTrainee(int sickDays, int failedTests, double salary) {
-        this.sickDays = sickDays;
-        this.failedTests = failedTests;
-        this.salary = salary;
+        this.data = new SalesTraineeData(sickDays, failedTests, salary);
     }
 
-    public double accept(Visitor visitor){
-
+    public double accept(Visitor visitor) {
         return visitor.visit(this);
-
     }
 
-    public int getSickDays() {
-        return sickDays;
+    // Metode untuk mendapatkan objek SalesTraineeData
+    public SalesTraineeData getData() {
+        return data;
     }
-    public void setSickDays(int sickDays) {
-        this.sickDays = sickDays;
-    }
-    public int getFailedTests() {
-        return failedTests;
-    }
-    public void setFailedTests(int failedTests) {
-        this.failedTests = failedTests;
-    }
-    public double getSalary() {
-        return salary;
-    }
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
 }

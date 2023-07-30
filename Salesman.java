@@ -8,12 +8,6 @@ public class Salesman implements Visitable{
         this.newCustomers = newCustomers;
     }
 
-    public double accept(Visitor visitor){
-
-        return visitor.visit(this);
-
-    }
-
     public double getTotalSalesAmount() {
         return totalSalesAmount;
     }

@@ -1,37 +1,31 @@
 public class Boss implements Visitable{
+    private BossInfo bossInfo;
 
-    private double totalSalesAmount;
-    private int newCustomers;
-    private double officeExpenses;
-
-    public Boss(double totalSalesAmount, int newCustomers, double officeExpenses) {
-        this.totalSalesAmount = totalSalesAmount;
-        this.newCustomers = newCustomers;
-        this.officeExpenses = officeExpenses;
-    }
-
-    public double accept(Visitor visitor){
-
-        return visitor.visit(this);
-
+    public Boss(BossInfo bossInfo) {
+        this.bossInfo = bossInfo;
     }
 
     public double getTotalSalesAmount() {
-        return totalSalesAmount;
+        return bossInfo.getTotalSalesAmount();
     }
+
     public void setTotalSalesAmount(double totalSalesAmount) {
-        this.totalSalesAmount = totalSalesAmount;
+        bossInfo.setTotalSalesAmount(totalSalesAmount);
     }
+
     public int getNewCustomers() {
-        return newCustomers;
+        return bossInfo.getNewCustomers();
     }
+
     public void setNewCustomers(int newCustomers) {
-        this.newCustomers = newCustomers;
+        bossInfo.setNewCustomers(newCustomers);
     }
+
     public double getOfficeExpenses() {
-        return officeExpenses;
+        return bossInfo.getOfficeExpenses();
     }
+
     public void setOfficeExpenses(double officeExpenses) {
-        this.officeExpenses = officeExpenses;
+        bossInfo.setOfficeExpenses(officeExpenses);
     }
 }

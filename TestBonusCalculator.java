@@ -1,7 +1,10 @@
 public class TestBonusCalculator {
 
-    public static void main(String[] args){
+    public static void main(){
+        
+    }
 
+    public static yearlyBonusCalculator() {
         YearlyBonusVisitor yearlyBonusCalculator = new YearlyBonusVisitor();
 
         SalesTrainee bradTrainee = new SalesTrainee(5, 1, 20000);
@@ -10,10 +13,12 @@ public class TestBonusCalculator {
 
         System.out.println("YEARLY BONUS");
 
-        System.out.println(bradTrainee.accept(yearlyBonusCalculator));
-        System.out.println(tomSalesman.accept(yearlyBonusCalculator));
-        System.out.println(rossBoss.accept(yearlyBonusCalculator));
+        System.out.println(yearlyBonusCalculator.visit(bradTrainee));
+        System.out.println(yearlyBonusCalculator.visit(tomSalesman));
+        System.out.println(yearlyBonusCalculator.visit(rossBoss));
+    }
 
+    public static quarterlyBonusCalculator() {
         QuarterlyBonusVisitor quarterlyBonusCalculator = new QuarterlyBonusVisitor();
 
         bradTrainee = new SalesTrainee(1, 0, 20000);
@@ -22,10 +27,9 @@ public class TestBonusCalculator {
 
         System.out.println("\nQUARTERLY BONUS");
 
-        System.out.println(bradTrainee.accept(quarterlyBonusCalculator));
-        System.out.println(tomSalesman.accept(quarterlyBonusCalculator));
-        System.out.println(rossBoss.accept(quarterlyBonusCalculator));
-
+        System.out.println(quarterlyBonusCalculator.visit(bradTrainee));
+        System.out.println(quarterlyBonusCalculator.visit(tomSalesman));
+        System.out.println(quarterlyBonusCalculator.visit(rossBoss));
     }
 
 }
